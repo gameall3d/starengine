@@ -163,14 +163,6 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\StarD3D9RenderSystem.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\StarD3DRenderWindow.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\StarEngine.cpp"
 				>
 			</File>
@@ -190,6 +182,38 @@
 				RelativePath=".\StarRenderWindow.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\StarVertexBuffer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\StarVertexDeclaration.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\StarVertexElement.cpp"
+				>
+			</File>
+			<Filter
+				Name="D3DRenderer"
+				>
+				<File
+					RelativePath=".\StarD3D9Mappings.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\StarD3D9RenderSystem.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\StarD3D9RenderWindow.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\StarD3D9VertexBuffer.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="头文件"
@@ -197,15 +221,15 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\StarD3D9RenderSystem.h"
-				>
-			</File>
-			<File
-				RelativePath=".\StarD3D9RenderWindow.h"
+				RelativePath=".\Star.h"
 				>
 			</File>
 			<File
 				RelativePath=".\StarEngine.h"
+				>
+			</File>
+			<File
+				RelativePath=".\StarFrameListener.h"
 				>
 			</File>
 			<File
@@ -214,6 +238,10 @@
 			</File>
 			<File
 				RelativePath=".\StarLogManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\StarOperationOnData.h"
 				>
 			</File>
 			<File
@@ -236,6 +264,42 @@
 				RelativePath=".\StarStdHeaders.h"
 				>
 			</File>
+			<File
+				RelativePath=".\StarVertexBuffer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\StarVertexDeclaration.h"
+				>
+			</File>
+			<File
+				RelativePath=".\StarVertexElement.h"
+				>
+			</File>
+			<Filter
+				Name="D3DRenderer"
+				>
+				<File
+					RelativePath=".\StarD3D9Mappings.h"
+					>
+				</File>
+				<File
+					RelativePath=".\StarD3D9Prerequisites.h"
+					>
+				</File>
+				<File
+					RelativePath=".\StarD3D9RenderSystem.h"
+					>
+				</File>
+				<File
+					RelativePath=".\StarD3D9RenderWindow.h"
+					>
+				</File>
+				<File
+					RelativePath=".\StarD3D9VertexBuffer.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="资源文件"

@@ -29,6 +29,11 @@ namespace Star
 	class CRenderSystem;
 	class CRenderWindow;
 	class CLogManager;
+	class CVertexBuffer;
+	class CVertexDeclaration;
+	class CVertexElement;
+	class CFrameListener;
+	class COperationOnData;
 }
 
 #include "StarStdHeaders.h"

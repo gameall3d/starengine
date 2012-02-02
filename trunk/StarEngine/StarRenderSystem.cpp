@@ -12,10 +12,10 @@ namespace Star
 
 	}
 
-	CRenderWindow* CRenderSystem::CreateRenderWindow(std::string title, int nWidth, int nHeight, bool bFullscreen)
-	{
-		return NULL;
-	}
+// 	CRenderWindow* CRenderSystem::CreateRenderWindow(std::string title, int nWidth, int nHeight, bool bFullscreen)
+// 	{
+// 		return NULL;
+// 	}
 
 	void CRenderSystem::Shutdown()
 	{

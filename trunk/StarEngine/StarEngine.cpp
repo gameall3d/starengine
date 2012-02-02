@@ -21,7 +21,8 @@ namespace Star
 		return (*m_spSingleton);
 	}
 
-	CStarEngine::CStarEngine(const String& logName):m_bEndRender(false),m_pLogManager(0)
+	CStarEngine::CStarEngine(const String& logName):
+	m_bEndRender(false),m_pLogManager(NULL), m_pFrameListener(NULL)
 	{
 		if (CLogManager::GetSingletonPtr() == NULL)
 		{
@@ -36,11 +37,17 @@ namespace Star
 	{
 		delete m_pRenderSystem;
 		delete m_pLogManager;
+		delete m_pFrameListener;
 	}
 
 	void CStarEngine::SetRenderSystem(CRenderSystem* renderSystem)
 	{
 		m_pRenderSystem = renderSystem;
+	}
+
+	void CStarEngine::SetFrameListener(CFrameListener* pListener)
+	{
+		m_pFrameListener = pListener;
 	}
 
 	void CStarEngine::StartRendering()
@@ -66,9 +73,33 @@ namespace Star
 		
 	}
 
+	bool CStarEngine::FrameStarted()
+	{
+		if (m_pFrameListener)
+		{
+			return m_pFrameListener->OnFrameStarted();
+		}
+		return true;
+	}
+
+	bool CStarEngine::FrameEnded()
+	{
+		if (m_pFrameListener)
+		{
+			return m_pFrameListener->OnFrameEnded();
+		}
+		return true;
+	}
+
 	bool CStarEngine::RenderOneFrame()
 	{
+		if (!FrameStarted())
+			return false;
+
 		m_pRenderSystem->Render();
+
+		if (!FrameEnded())
+			return false;
 		return true;
 	}
 }

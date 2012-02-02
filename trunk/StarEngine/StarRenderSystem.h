@@ -13,6 +13,9 @@
 #endif // end of _MSC_VER
 
 #include "StarPrerequisites.h"
+#include "StarVertexBuffer.h"
+#include "StarOperationOnData.h"
+
 #include <string>
 
 namespace Star
@@ -23,18 +26,22 @@ namespace Star
 		CRenderSystem();
 		virtual ~CRenderSystem();
 
-		virtual CRenderWindow* CreateRenderWindow(std::string title, int nWidth, int nHeight, bool bFullscreen);
+		virtual CRenderWindow* CreateRenderWindow(std::string title, int nWidth, int nHeight, bool bFullscreen) = 0;
 
 		void Shutdown();
 
 		// transform
-		void CalcPojectectMatrix(float fov, float aspect, float near, float far) = 0;
-		void CalcOrthoMatrix(float fov, float aspect, float near, float far) = 0;
+		virtual void CalcPojectectMatrix(float fov, float aspect, float near, float far) = 0;
+		virtual void CalcOrthoMatrix(float fov, float aspect, float near, float far) = 0;
 
 		// for render
-		virtual void BeginFrame()=0;
-		virtual void Render()=0;
-		virtual void EndFrame()=0;
+		virtual CVertexBufferPtr CreateVertexBuffer(CVertexDeclaration& declaration, size_t nNumVertices) = 0;
+		virtual void RenderVertexBuffer(CVertexBufferPtr pVertexBuffer) = 0;
+		virtual void RenderOnData(const COperationOnData& op) = 0;
+		virtual void BeginFrame() = 0;
+		virtual void Render() = 0;
+		virtual void EndFrame() = 0;
+		virtual void SwapBuffers() = 0;
 
 	protected:
 		CRenderWindow* m_pRenderWindow;
