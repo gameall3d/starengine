@@ -12,7 +12,7 @@
 #pragma once
 #endif // end of _MSC_VER
 
-#include "StarPrerequisites.h"
+#include "StarD3D9Prerequisites.h"
 #include "StarRenderWindow.h"
 
 

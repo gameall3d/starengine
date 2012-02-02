@@ -15,6 +15,7 @@
 #include "StarPrerequisites.h"
 #include "StarSingleton.h"
 #include "StarRenderSystem.h"
+#include "StarFrameListener.h"
 
 namespace Star
 {
@@ -29,7 +30,15 @@ namespace Star
 
 		void SetRenderSystem(CRenderSystem* renderSystem);
 		void StartRendering();
+		bool FrameStarted();
+		bool FrameEnded();
 		bool RenderOneFrame();
+
+		// set FrameListener
+		void SetFrameListener(CFrameListener* pListener);
+
+		// Getter
+		CRenderSystem* GetRenderSystem(void) const { return m_pRenderSystem; }
 
 	private:
 		//static CStarEngine* m_spSingleton;
@@ -37,6 +46,8 @@ namespace Star
 		
 		// singletons
 		CLogManager* m_pLogManager;
+		// frame Listener
+		CFrameListener* m_pFrameListener;
 
 		bool m_bEndRender;
 	};

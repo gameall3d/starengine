@@ -19,4 +19,7 @@
 #include <fstream>
 #include <iomanip>
 
+// stl
+#include <list>
+
 #endif // end of _ZH_STARSTDHEADERS_H_

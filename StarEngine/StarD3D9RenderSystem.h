@@ -5,8 +5,11 @@
 /* Describe: Direct3D9 render                                           
 /************************************************************************/
 
-#include "StarPrerequisites.h"
+#include "StarD3D9Prerequisites.h"
 #include "StarRenderSystem.h"
+#include "StarD3D9VertexBuffer.h"
+
+
 #include <d3d9.h>
 
 namespace Star
@@ -24,9 +27,13 @@ namespace Star
 		void CalcOrthoMatrix(float fov, float aspect, float near, float far);
 
 		// render
+		CVertexBufferPtr CreateVertexBuffer(CVertexDeclaration& declaration, size_t nNumVertices);
+		void RenderVertexBuffer(CVertexBufferPtr pVertexBuffer);
+		void RenderOnData(const COperationOnData& op);
 		void BeginFrame();
 		void Render();
 		void EndFrame();
+		void SwapBuffers();
 	private:
 		HINSTANCE m_hInstance;
 		LPDIRECT3D9 m_pD3D;
