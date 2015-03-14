@@ -1,0 +1,1 @@
+while i was learning ogre,hge, i want to make a 2d/3d engine based on directx.
